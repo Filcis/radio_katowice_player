@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {PlayerToggle, Volume} from './utility/Controls'
 import tracklist from './data/json/tracklist.js'
+import {secondsToMs} from './utility/secondsToMs'
 
 export default class Player extends Component {
   constructor(props) {
@@ -13,23 +14,41 @@ export default class Player extends Component {
     }
     this.togglePlay = this.togglePlay.bind(this);
     this.changeVolume = this.changeVolume.bind(this);
+    this.startClock = this.startClock.bind(this);
+    this.pauseClock = this.pauseClock.bind(this);
   }
 
 togglePlay(e) {
   e.preventDefault();
   if (this.state.playing) {
     this.audio.pause();
+    this.pauseClock();
   } else {
     this.audio.play();
+    this.startClock();
   }
   this.setState(prevState => ({
     playing: !prevState.playing
   }))
 }
 
-  changeVolume(value) {
+changeVolume(value) {
     this.setState( {volume: value/100} )
   }
+
+countTime() {
+  this.setState((prevState) => {return{timePlaying: prevState.timePlaying + 1}} )
+}
+
+startClock() {
+  this.countTime();
+  this.TimerInstantion = setInterval(this.countTime.bind(this), 1000);
+}
+
+pauseClock() {
+  clearInterval(this.TimerInstantion);
+  this.setState( {timePlaying: 0} )
+}
 
 componentDidUpdate(prevProps, prevState) {
   if (this.state.volume !== prevState.volume) {
@@ -62,6 +81,7 @@ componentDidUpdate(prevProps, prevState) {
               </audio>
               <PlayerToggle isPlaying={this.state.playing} text={buttonClass} onClick={this.togglePlay} />
               <Volume onChange={this.changeVolume} currentVolume={this.state.volume * 100} />
+              <p>{secondsToMs(this.state.timePlaying)}</p>
             </div>
           </div>
           <div className="column is-full program_wrapper">

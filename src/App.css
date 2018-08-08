@@ -24,7 +24,7 @@
 .player_controls {
   display: flex;
   align-items: center; }
-  .player_controls button, .player_controls input {
+  .player_controls button, .player_controls p {
     margin-left: 3em; }
 
 .program_wrapper {
@@ -52,7 +52,7 @@
   height: 5px;
   display: inline-block;
   background: #313131;
-  margin-left: 50px;
+  margin-left: 3.5em;
   position: relative;
   border-radius: 10px; }
   .rangeslider:before {

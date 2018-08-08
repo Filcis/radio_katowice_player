@@ -34,7 +34,7 @@ $text: #fff;
 .player_controls {
   display: flex;
   align-items: center;
-  button, input {
+  button, p {
     margin-left: 3em;
   }
 }
@@ -74,7 +74,7 @@ $family-primary: "IBM Plex Sans";
   height: 5px;
   display: inline-block;
   background: $grey;
-  margin-left: 50px;
+  margin-left: 3.5em;
   position: relative;
   border-radius: 10px;
   &:before {
