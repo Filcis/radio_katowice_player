@@ -44,15 +44,15 @@ componentDidUpdate(prevProps, prevState) {
     <div className="Player_Wrapper columns is-gapless">
       <div className="column is-one-quarter player_picture" style={ {backgroundImage: "url("+tracklist[this.state.currentTrack].picture+")"} }></div>
       <div className="column is-three-quarters">
-        <div className="columns  is-multiline is-gapless has-background-red">
-          <div className="column is-one-quarter">
+        <div className="columns is-multiline is-gapless has-background-red ">
+          <div className="column is-one-quarter  is-verticaly-centered">
             <div className="player_info">
-              <h1>Teraz na antenie:</h1>
-              <p>{tracklist[this.state.currentTrack].artist}</p>
-              <p>{tracklist[this.state.currentTrack].songname}</p>
+              <h5 className="player_headline is-size-7">Teraz na antenie:</h5>
+              <p className="is-size-5 is-capitalized ">{tracklist[this.state.currentTrack].artist}</p>
+              <p className="is-size-5 is-capitalized has-text-weight-bold	is-uppercase">{tracklist[this.state.currentTrack].songname}</p>
             </div>
           </div>
-          <div className="column is-three-quarters">
+          <div className="column is-three-quarters is-verticaly-centered">
             <div className="player_controls">
               <audio
               ref={(audioTag) => { this.audio = audioTag }}

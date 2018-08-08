@@ -5,12 +5,20 @@ $grey-dark: #161616;
 $grey: #313131;
 $text: #fff;
 
+.is-verticaly-centered {
+  position: relative;
+  height: 12em;
+}
+
 .App {
   padding-top: 5em;
   height: 16em;
 }
 
 .player_info, .player_controls  {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
   padding: 2em;
   box-sizing: border-box;
 }
@@ -24,7 +32,6 @@ $text: #fff;
   }
 }
 .player_controls {
-  height: 12em;
   button, input {
     margin-left: 3em;
   }
@@ -49,10 +56,15 @@ $text: #fff;
     background-color: $rk_red;
 }
 
-
+// TYPOGRAPHY
 
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&subset=latin-ext');
+
 $family-primary: "IBM Plex Sans";
+
+.player_headline {
+  margin-bottom: 1em;
+}
 
 
 @import 'node_modules/bulma/bulma.sass';

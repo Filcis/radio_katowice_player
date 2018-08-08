@@ -1,9 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&subset=latin-ext");
+.is-verticaly-centered {
+  position: relative;
+  height: 12em; }
+
 .App {
   padding-top: 5em;
   height: 16em; }
 
 .player_info, .player_controls {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
   padding: 2em;
   box-sizing: border-box; }
 
@@ -14,10 +21,8 @@
   .player_picture img {
     height: 100%; }
 
-.player_controls {
-  height: 12em; }
-  .player_controls button, .player_controls input {
-    margin-left: 3em; }
+.player_controls button, .player_controls input {
+  margin-left: 3em; }
 
 .program_wrapper {
   height: 4em;
@@ -34,6 +39,9 @@
 
 .has-background-red {
   background-color: #C82323; }
+
+.player_headline {
+  margin-bottom: 1em; }
 
 /*! bulma.io v0.7.1 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
