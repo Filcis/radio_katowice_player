@@ -1,9 +1,58 @@
+//Colors:
+$rk_red: #C82323;
+$black: #000;
+$grey-dark: #161616;
+$grey: #313131;
+$text: #fff;
+
 .App {
-  text-align: center;
+  padding-top: 5em;
+  height: 16em;
 }
 
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&subset=latin-ext');
+.player_info, .player_controls  {
+  padding: 2em;
+  box-sizing: border-box;
+}
 
+.player_picture {
+  height:16em;
+  background-repeat: no-repeat;
+  background-size: cover;
+  img {
+    height: 100%;
+  }
+}
+.player_controls {
+  height: 12em;
+  button, input {
+    margin-left: 3em;
+  }
+}
+.program_wrapper {
+  height: 4em;
+  background-color: $grey;
+}
+
+.toggle_player_button {
+  background: none;
+  border:none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  &:focus {
+    outline:none;
+  }
+}
+
+.has-background-red {
+    background-color: $rk_red;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&subset=latin-ext');
+$family-primary: "IBM Plex Sans";
 
 
 @import 'node_modules/bulma/bulma.sass';

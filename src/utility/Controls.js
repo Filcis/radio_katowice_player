@@ -1,8 +1,17 @@
 import React, { Component } from 'react'
 
+import PlayIcon from '../data/img/SVG/playIcon.svg';
+import StopIcon from '../data/img/SVG/stopIcon.svg'
+
 const PlayerToggle = (props) => {
+  let Icon = PlayIcon;
+  if (props.isPlaying) {
+    Icon = StopIcon;
+  }
     return(
-      <button className="button" onClick ={props.onClick}>{props.text}</button>
+      <button className="toggle_player_button" onClick ={props.onClick}>
+        <img src={Icon} />
+      </button>
     )
 }
 
