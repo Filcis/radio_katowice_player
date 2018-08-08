@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:200,400,700&subset=latin-ext");
 .is-verticaly-centered {
   position: relative;
   height: 12em; }
@@ -15,7 +15,7 @@
   box-sizing: border-box; }
 
 .player_picture {
-  height: 16em;
+  height: 17em;
   background-repeat: no-repeat;
   background-size: cover; }
   .player_picture img {
@@ -28,8 +28,8 @@
     margin-left: 3em; }
 
 .program_wrapper {
-  height: 4em;
-  background-color: #313131; }
+  height: 5em;
+  background-color: #161616; }
 
 .toggle_player_button {
   background: none;
@@ -46,6 +46,12 @@
 
 .player_headline {
   margin-bottom: 1em; }
+
+.player_program_headline {
+  font-weight: 200;
+  font-size: 0.8rem;
+  line-height: 5rem;
+  text-align: center; }
 
 .rangeslider {
   width: 120px;
@@ -6520,3 +6526,147 @@ label.panel-block {
 .footer {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
+
+.alice-carousel {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: auto; }
+
+.alice-carousel__wrapper {
+  position: relative;
+  width: 85%;
+  margin: 0 auto;
+  height: 5em;
+  box-sizing: border-box;
+  overflow: hidden; }
+
+.alice-carousel__stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  box-sizing: border-box;
+  font-size: 0.75rem; }
+  .alice-carousel__stage-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    line-height: 5rem;
+    text-align: center; }
+    .alice-carousel__stage-item * {
+      line-height: initial; }
+    .alice-carousel__stage-item.__cloned {
+      opacity: 0;
+      visibility: hidden; }
+  .alice-carousel__stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%; }
+
+.alice-carousel__prev-btn-item,
+.alice-carousel__next-btn-item {
+  display: inline-block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.9em;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  transition: 0.3s ease; }
+  .alice-carousel__prev-btn-item:before,
+  .alice-carousel__next-btn-item:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%; }
+  .alice-carousel__prev-btn-item:hover,
+  .alice-carousel__next-btn-item:hover {
+    color: #C82323;
+    border: 1px solid #C82323; }
+  .alice-carousel__prev-btn-item.__inactive,
+  .alice-carousel__next-btn-item.__inactive {
+    opacity: .4; }
+
+.alice-carousel__prev-btn-item {
+  left: 10px; }
+  .alice-carousel__prev-btn-item:after {
+    content: '\02039';
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0); }
+
+.alice-carousel__next-btn-item {
+  right: 10px; }
+  .alice-carousel__next-btn-item:after {
+    content: '\0203A';
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0); }
+
+.alice-carousel__play-btn {
+  display: inline-block;
+  position: absolute;
+  bottom: 90px;
+  left: 80px;
+  transform: scale(0.8); }
+  .alice-carousel__play-btn:hover {
+    cursor: pointer; }
+
+.alice-carousel__play-btn-item {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  background: transparent;
+  border: 0;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 30px;
+  outline: none; }
+  .alice-carousel__play-btn-item::before, .alice-carousel__play-btn-item::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 8px 0 8px 15px;
+    border-left-color: #fff;
+    width: 0;
+    height: 0;
+    transition: all 0.3s linear; }
+  .alice-carousel__play-btn-item::before {
+    height: 16px; }
+  .alice-carousel__play-btn-item::after {
+    left: 15px;
+    top: 8px; }
+  .alice-carousel__play-btn-item.__pause::before, .alice-carousel__play-btn-item.__pause::after {
+    border-width: 0 0 0 10px;
+    height: 30px; }
+  .alice-carousel__play-btn-item.__pause::after {
+    left: 18px;
+    top: 0; }

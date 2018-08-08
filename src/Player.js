@@ -3,6 +3,8 @@ import {PlayerToggle, Volume} from './utility/Controls'
 import tracklist from './data/json/tracklist.js'
 import {secondsToMs} from './utility/secondsToMs'
 
+import {Program} from './Program.js'
+
 export default class Player extends Component {
   constructor(props) {
     super(props);
@@ -85,7 +87,14 @@ componentDidUpdate(prevProps, prevState) {
             </div>
           </div>
           <div className="column is-full program_wrapper">
-
+            <div className="columns is-gapless">
+            <div className="column is-1 has-background-grey">
+              <h4 className="player_program_headline">DZISIAJ</h4>
+            </div>
+            <div className="column is-11">
+            <Program />
+            </div>
+            </div>
           </div>
         </div>
       </div>

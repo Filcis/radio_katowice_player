@@ -24,7 +24,7 @@ $text: #fff;
 }
 
 .player_picture {
-  height:16em;
+  height:17em;
   background-repeat: no-repeat;
   background-size: cover;
   img {
@@ -39,8 +39,8 @@ $text: #fff;
   }
 }
 .program_wrapper {
-  height: 4em;
-  background-color: $grey;
+  height: 5em;
+  background-color: $grey-dark;
 }
 
 .toggle_player_button {
@@ -61,12 +61,19 @@ $text: #fff;
 
 // TYPOGRAPHY
 
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:200,400,700&subset=latin-ext');
 
 $family-primary: "IBM Plex Sans";
 
 .player_headline {
   margin-bottom: 1em;
+}
+
+.player_program_headline {
+  font-weight: 200;
+  font-size: 0.8rem;
+  line-height: 5rem;
+  text-align: center;
 }
 
 .rangeslider{
@@ -128,4 +135,8 @@ $family-primary: "IBM Plex Sans";
     top: 0;
 }
 
+//////////////////////////////////////////////
+
+
 @import 'node_modules/bulma/bulma.sass';
+@import "./carousel.scss";
