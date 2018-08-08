@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import Slider from 'react-rangeslider'
+
 
 import PlayIcon from '../data/img/SVG/playIcon.svg';
-import StopIcon from '../data/img/SVG/stopIcon.svg'
+import StopIcon from '../data/img/SVG/stopIcon.svg';
 
 const PlayerToggle = (props) => {
   let Icon = PlayIcon;
@@ -17,7 +19,13 @@ const PlayerToggle = (props) => {
 
 const Volume = (props) => {
     return(
-    <input onChange={props.onChange} type="range" min="0" max="100"/>
+    <Slider
+        value= {props.currentVolume}
+        orientation="horizontal"
+        onChange={props.onChange}
+        step= {1}
+        tooltip= {false}
+      />
     )
 }
 

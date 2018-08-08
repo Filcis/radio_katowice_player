@@ -27,8 +27,8 @@ togglePlay(e) {
   }))
 }
 
-  changeVolume(e) {
-    this.setState( {volume: e.target.value/100} )
+  changeVolume(value) {
+    this.setState( {volume: value/100} )
   }
 
 componentDidUpdate(prevProps, prevState) {
@@ -61,7 +61,7 @@ componentDidUpdate(prevProps, prevState) {
               >
               </audio>
               <PlayerToggle isPlaying={this.state.playing} text={buttonClass} onClick={this.togglePlay} />
-              <Volume onChange={this.changeVolume} currentVolume={this.state.volume} />
+              <Volume onChange={this.changeVolume} currentVolume={this.state.volume * 100} />
             </div>
           </div>
           <div className="column is-full program_wrapper">
