@@ -99,7 +99,7 @@ $play-btn-color: #fff;
 }
 
 .alice-carousel__prev-btn-item {
-    left: 10px;
+    left: 20px;
     &:after {
       content: '\02039';
       font-size: 1rem;
@@ -110,7 +110,7 @@ $play-btn-color: #fff;
 }
 
 .alice-carousel__next-btn-item {
-    right: 10px;
+    right: 20px;
     &:after {
       content: '\0203A';
       font-size: 1rem;

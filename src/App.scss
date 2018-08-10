@@ -5,9 +5,17 @@ $grey-dark: #161616;
 $grey: #313131;
 $text: #fff;
 
+body {
+  background-color: $black;
+}
+
 .is-verticaly-centered {
   position: relative;
   height: 12em;
+}
+
+.has-rounded-corner {
+    border-radius: 0 0 25px 0;
 }
 
 .App {

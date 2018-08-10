@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Slider from 'react-rangeslider'
-
+import {secondsToMs} from './secondsToMs'
 
 import PlayIcon from '../data/img/SVG/playIcon.svg';
 import StopIcon from '../data/img/SVG/stopIcon.svg';
@@ -29,5 +29,10 @@ const Volume = (props) => {
     )
 }
 
+const Timer = (props) => {
+  return (
+    <p>{secondsToMs(props.timePlaying)}</p>
+  )
+}
 
-export {PlayerToggle, Volume}
+export {PlayerToggle, Volume, Timer}

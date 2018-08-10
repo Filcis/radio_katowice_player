@@ -1,7 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:200,400,700&subset=latin-ext");
+body {
+  background-color: #000; }
+
 .is-verticaly-centered {
   position: relative;
   height: 12em; }
+
+.has-rounded-corner {
+  border-radius: 0 0 25px 0; }
 
 .App {
   padding-top: 5em;
@@ -6610,7 +6616,7 @@ label.panel-block {
     opacity: .4; }
 
 .alice-carousel__prev-btn-item {
-  left: 10px; }
+  left: 20px; }
   .alice-carousel__prev-btn-item:after {
     content: '\02039';
     font-size: 1rem;
@@ -6619,7 +6625,7 @@ label.panel-block {
     transform: translate3d(-50%, -50%, 0); }
 
 .alice-carousel__next-btn-item {
-  right: 10px; }
+  right: 20px; }
   .alice-carousel__next-btn-item:after {
     content: '\0203A';
     font-size: 1rem;

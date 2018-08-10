@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import {PlayerToggle, Volume} from './utility/Controls'
+import {PlayerToggle, Volume, Timer} from './utility/Controls'
 import tracklist from './data/json/tracklist.js'
-import {secondsToMs} from './utility/secondsToMs'
 
 import {Program} from './Program.js'
 
@@ -65,7 +64,7 @@ componentDidUpdate(prevProps, prevState) {
     <div className="Player_Wrapper columns is-gapless">
       <div className="column is-one-quarter player_picture" style={ {backgroundImage: "url("+tracklist[this.state.currentTrack].picture+")"} }></div>
       <div className="column is-three-quarters">
-        <div className="columns is-multiline is-gapless has-background-red ">
+        <div className="columns is-multiline is-gapless has-background-red has-rounded-corner">
           <div className="column is-one-quarter  is-verticaly-centered">
             <div className="player_info">
               <h5 className="player_headline is-size-7">Teraz na antenie:</h5>
@@ -83,10 +82,10 @@ componentDidUpdate(prevProps, prevState) {
               </audio>
               <PlayerToggle isPlaying={this.state.playing} text={buttonClass} onClick={this.togglePlay} />
               <Volume onChange={this.changeVolume} currentVolume={this.state.volume * 100} />
-              <p>{secondsToMs(this.state.timePlaying)}</p>
+              <Timer timePlaying={this.state.timePlaying} />
             </div>
           </div>
-          <div className="column is-full program_wrapper">
+          <div className="column is-full program_wrapper has-rounded-corner">
             <div className="columns is-gapless">
             <div className="column is-1 has-background-grey">
               <h4 className="player_program_headline">DZISIAJ</h4>
