@@ -101,7 +101,7 @@ componentWillUnmount() {
     <div className="Player_Wrapper columns is-gapless">
       <div className="column is-one-quarter player_picture" style={ {backgroundImage: "url("+tracklist[this.state.currentTrack].picture+")"} }></div>
       <div className="column is-three-quarters">
-        <div className="columns is-multiline is-gapless has-background-red has-rounded-corner">
+        <div className="columns is-gapless player_inner_wrapper is-marginless">
           <div className="column is-one-quarter  is-verticaly-centered">
             <div className="player_info">
               <h5 className="player_headline is-size-7">Teraz na antenie:</h5>
@@ -122,9 +122,11 @@ componentWillUnmount() {
               <Timer timePlaying={this.state.timePlaying} />
             </div>
           </div>
+        </div>
+        <div className="columns is-gapless has-rounded-corner">
           <div className="column is-full program_wrapper has-rounded-corner">
-            <div className="columns is-gapless">
-            <div className="column is-1 has-background-grey">
+            <div className="columns is-desktop is-gapless">
+            <div className="column is-full-tablet is-1-desktop">
               <h4 className="player_program_headline">DZISIAJ</h4>
             </div>
             <div className="column is-11">

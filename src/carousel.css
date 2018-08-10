@@ -74,24 +74,26 @@
     height: 100%; }
   .alice-carousel__prev-btn-item:hover,
   .alice-carousel__next-btn-item:hover {
-    color: darkred;
-    border: 1px solid darkred; }
+    color: #C82323;
+    border: 1px solid #C82323; }
   .alice-carousel__prev-btn-item.__inactive,
   .alice-carousel__next-btn-item.__inactive {
     opacity: .4; }
 
 .alice-carousel__prev-btn-item {
-  left: 10px; }
+  left: 20px; }
   .alice-carousel__prev-btn-item:after {
     content: '\02039';
+    font-size: 1rem;
     position: absolute;
     top: 50%;
     transform: translate3d(-50%, -50%, 0); }
 
 .alice-carousel__next-btn-item {
-  right: 10px; }
+  right: 20px; }
   .alice-carousel__next-btn-item:after {
     content: '\0203A';
+    font-size: 1rem;
     position: absolute;
     top: 50%;
     transform: translate3d(-50%, -50%, 0); }
