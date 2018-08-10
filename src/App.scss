@@ -1,13 +1,11 @@
+@import 'node_modules/bulma/sass/utilities/_all.sass';
+
 //Colors:
 $rk_red: #C82323;
 $black: #000;
 $grey-dark: #161616;
 $grey: #313131;
 $text: #fff;
-
-body {
-  background-color: $black;
-}
 
 .is-verticaly-centered {
   position: relative;
@@ -19,35 +17,81 @@ body {
 }
 
 .App {
-  padding-top: 5em;
+  @include tablet {
+      padding-top: 5em;
+  }
+  background-color: none;
   height: 16em;
 }
 
 .player_info, .player_controls  {
+  @include mobile {
+    width: 100%;
+    text-align: center;
+  }
   position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
+  @include tablet {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
   padding: 2em;
   box-sizing: border-box;
 }
 
+.player_controls {
+  @include mobile {
+    bottom: 0%;
+  }
+}
+
+.player_info{
+  @include mobile {
+    bottom: 0%;
+  }
+}
+
+.Player_Wrapper {
+  position: relative;
+}
+
 .player_picture {
-  height:17em;
+  height:19em;
+  @include mobile {
+    height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+      background-color: rgba(0,0,0,0.7);
+      background-blend-mode: darken;
+    }
+  @include desktop {
+    height:17em;
+  }
   background-repeat: no-repeat;
   background-size: cover;
   img {
     height: 100%;
   }
 }
+
 .player_controls {
   display: flex;
   align-items: center;
-  button, p {
-    margin-left: 3em;
+  @include mobile {
+    justify-content: space-between;
+  }
+  button, p, .rangeslider {
+    @include tablet {
+      margin-left: 3em;
+    }
   }
 }
 .program_wrapper {
-  height: 5em;
+  @include desktop {
+    height: 5em;
+  }
   background-color: $grey-dark;
 }
 
@@ -63,8 +107,10 @@ body {
   }
 }
 
-.has-background-red {
-    background-color: $rk_red;
+.player_inner_wrapper {
+  @include tablet {
+      background-color: $rk_red;
+  }
 }
 
 // TYPOGRAPHY
@@ -80,8 +126,12 @@ $family-primary: "IBM Plex Sans";
 .player_program_headline {
   font-weight: 200;
   font-size: 0.8rem;
-  line-height: 5rem;
   text-align: center;
+  line-height: 2rem;
+  background-color: $grey;
+  @include desktop {
+      line-height: 5rem;
+  }
 }
 
 .rangeslider{
@@ -89,7 +139,6 @@ $family-primary: "IBM Plex Sans";
   height: 5px;
   display: inline-block;
   background: $grey;
-  margin-left: 3.5em;
   position: relative;
   border-radius: 10px;
   &:before {
