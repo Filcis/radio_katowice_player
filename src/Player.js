@@ -57,6 +57,43 @@ componentDidUpdate(prevProps, prevState) {
   }
 }
 
+// Handler for 1,2,3 keyboard keys. For changing trucks in demo. Will not be used in final player based on stream
+_handleKeyPress(ev) {
+  function reset () {
+    if (this.state.playing) {
+      this.setState({playing: 0})
+      this.audio.pause();
+      this.pauseClock();
+    }
+  }
+
+  switch( ev.keyCode ) {
+        case 49:
+            this.setState({currentTrack: 0});
+            reset.call(this);
+            break;
+        case 50:
+            this.setState({currentTrack: 1});
+            reset.call(this);
+            break;
+        case 51:
+            this.setState({currentTrack: 2});
+            reset.call(this);
+            break;
+        default:
+            break;
+    }
+}
+
+componentWillMount(){
+    document.addEventListener("keypress", this._handleKeyPress.bind(this));
+}
+
+
+componentWillUnmount() {
+    document.removeEventListener("keypress", this._handleKeyPress.bind(this));
+}
+
 
   render () {
     let buttonClass = this.state.playing ? "stop" : "play"
