@@ -113,6 +113,12 @@ $text: #fff;
   }
 }
 
+#granim {
+  @include mobile {
+        display: none !important;
+  }
+}
+
 // TYPOGRAPHY
 
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:200,400,700&subset=latin-ext');

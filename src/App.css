@@ -256,6 +256,10 @@
   .player_inner_wrapper {
     background-color: #C82323; } }
 
+@media screen and (max-width: 768px) {
+  #granim {
+    display: none !important; } }
+
 .player_headline {
   margin-bottom: 1em; }
 
